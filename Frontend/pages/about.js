@@ -1,3 +1,4 @@
+import { body } from '../styles/styles';
 import Link from 'next/link';
 
 export default () => (
@@ -6,5 +7,7 @@ export default () => (
     <Link href="/">
       <button>Home</button>
     </Link>
+
+    <style jsx global>{body}</style>
   </div>
 );
