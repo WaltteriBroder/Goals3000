@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Goals3000.iml" filepath="$PROJECT_DIR$/.idea/Goals3000.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backend/application/application.iml" filepath="$PROJECT_DIR$/Backend/application/application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backend/AWSHelloWorld/application.iml" filepath="$PROJECT_DIR$/Backend/AWSHelloWorld/application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Backend/firstmicroservice/firstmicroservice.iml" filepath="$PROJECT_DIR$/Backend/firstmicroservice/firstmicroservice.iml" />
+    </modules>
+  </component>
+</project>
