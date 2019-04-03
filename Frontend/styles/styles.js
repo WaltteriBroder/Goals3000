@@ -5,17 +5,18 @@ export const body = css.global`
   body {
     font-family: sans-serif;
   }
-
-  button {
-    text-transform: none;
-    cursor: pointer;
-  }
-
+  
   button,
   [type="button"],
   [type="reset"],
   [type="submit"] {
     -webkit-appearance: button;
+    font-family: inherit;
+  }
+  
+  button {
+    text-transform: none;
+    cursor: pointer;
   }
 
   .nappula {
