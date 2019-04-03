@@ -11,6 +11,6 @@ public class TestController {
     @GetMapping("/hello")
     public String sayHello(){
         System.out.println("täällä ollaan");
-        return "HelloFromMicroService";
+        return "HelloFromMicroServiceMuutettu";
     }
 }
