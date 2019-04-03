@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { body } from '../styles/styles';
+import { apiRootUrl } from '../utils';
 import Link from 'next/link';
 import fetch from 'isomorphic-unfetch';
 
@@ -17,9 +18,12 @@ const renderUsers = users => {
 
 const Index = () => {
   const [users, setUsers] = useState([]);
+
+  console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
+  console.log('root url => ', apiRootUrl);
   
   const getUsers = async () => {
-    const res = await fetch(`http://localhost:8080/users/all`);
+    const res = await fetch(`${apiRootUrl}/users/all`);
     const data = await res.json();
     console.log(data);
     setUsers(data);
