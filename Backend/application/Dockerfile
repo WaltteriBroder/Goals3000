@@ -4,6 +4,6 @@ EXPOSE 8080
 
 WORKDIR /usr/local/bin
 
-COPY ./target/demo-0.0.1-SNAPSHOT.jar webapp.jar
+COPY ./target/application-1.jar application.jar
 
-CMD ["java", "-jar", "webapp.jar"]
+CMD ["java", "-jar", "application.jar"]

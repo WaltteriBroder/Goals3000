@@ -7,6 +7,8 @@ import javax.persistence.Id;
 @Entity
 public class User {
 
+    @Id
+    @GeneratedValue
     private Long id;
     private String name;
     private String teamName;
@@ -21,8 +23,6 @@ public class User {
     public User() {
     }
 
-    @Id
-    @GeneratedValue
     public Long getId() {
         return id;
     }
