@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/goals")
 public class GoalController {
@@ -21,6 +23,11 @@ public class GoalController {
     @GetMapping("/list")
     public Iterable<SingleGoal> getSingleGoals(){
         return goalService.getSingleGoals();
+    }
+
+    @GetMapping("/list/{userId}")
+    public Optional<SingleGoal> getSingleGoalsByUser(@PathVariable("userId") Integer userId){
+        return goalService.getSingleGoalsByUser(userId);
     }
 
     @PostMapping("/add")

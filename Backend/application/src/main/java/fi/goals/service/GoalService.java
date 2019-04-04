@@ -22,10 +22,13 @@ public class GoalService {
         return singleGoalRepository.findAll();
     }
 
+    public Optional<SingleGoal> getSingleGoalsByUser(Integer userId) {
+        return singleGoalRepository.findByUserId(userId);
+    }
+
     public void addSingleGoal(SingleGoal goal) {
         singleGoalRepository.save(goal);
     }
-
 
     public void addDailyAchievements(DailyAchievement achievement) {
 

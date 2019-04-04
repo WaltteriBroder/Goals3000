@@ -27,6 +27,11 @@ public class UserController {
       return userService.findAll();
     }
 
+    @GetMapping("/all/{name}")
+    public Iterable<User> findByName(@PathVariable("name") String name){
+        return userService.findByName(name);
+    }
+
     @PostMapping("/add")
     public void addUser(@RequestBody User user){
         userService.addUser(user);

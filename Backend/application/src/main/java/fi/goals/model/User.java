@@ -1,23 +1,23 @@
 package fi.goals.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class User {
 
     @Id
     @GeneratedValue
+    @Column(name = "user_id")
     private Long id;
     private String name;
-    private String teamName;
-    private Integer salary;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
+    private List<SingleGoal> goals;
 
-    public User(String name, String teamName, Integer salary) {
+    public User(String name, List<SingleGoal> goals) {
         this.name = name;
-        this.teamName = teamName;
-        this.salary = salary;
+        this.goals = goals;
     }
 
     public User() {
@@ -39,19 +39,11 @@ public class User {
         this.name = name;
     }
 
-    public String getTeamName() {
-        return teamName;
+    public List<SingleGoal> getGoals() {
+        return goals;
     }
 
-    public void setTeamName(String teamName) {
-        this.teamName = teamName;
-    }
-
-    public Integer getSalary() {
-        return salary;
-    }
-
-    public void setSalary(Integer salary) {
-        this.salary = salary;
+    public void setGoals(List<SingleGoal> goals) {
+        this.goals = goals;
     }
 }

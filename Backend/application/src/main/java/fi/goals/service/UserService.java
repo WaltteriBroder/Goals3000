@@ -19,6 +19,10 @@ public class UserService {
         return userRepository.findAll();
     }
 
+    public Iterable<User> findByName(String name) {
+        return userRepository.findByName(name);
+    }
+
     public void addUser(User user) {
         userRepository.save(user);
     }

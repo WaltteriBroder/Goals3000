@@ -1,9 +1,6 @@
 package fi.goals.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class SingleGoal {
@@ -15,10 +12,14 @@ public class SingleGoal {
     private String goalName;
     private Integer achieved;
 
-    public SingleGoal(Integer quantity, String goalName, Integer achieved) {
+    @Column(name = "user_id")
+    private Integer userId;
+
+    public SingleGoal(Integer quantity, String goalName, Integer achieved, Integer userId) {
         this.quantity = quantity;
         this.goalName = goalName;
         this.achieved = achieved;
+        this.userId = userId;
     }
 
     public SingleGoal() {
@@ -56,13 +57,22 @@ public class SingleGoal {
         this.achieved = achieved;
     }
 
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
+
     @Override
     public String toString() {
         return "SingleGoal{" +
                 "id=" + id +
                 ", quantity=" + quantity +
                 ", goalName='" + goalName + '\'' +
-                ", achieved='" + achieved + '\'' +
+                ", achieved=" + achieved +
+                ", userId=" + userId +
                 '}';
     }
 }

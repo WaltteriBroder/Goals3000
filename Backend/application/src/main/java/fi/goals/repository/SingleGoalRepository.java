@@ -11,7 +11,6 @@ public interface SingleGoalRepository extends CrudRepository<SingleGoal, Integer
 
     Optional<SingleGoal> findById(Integer id);
 
-    Optional<SingleGoal> findByGoalName(String goalName);
-
+    Optional<SingleGoal> findByUserId(Integer userId);
 
 }
