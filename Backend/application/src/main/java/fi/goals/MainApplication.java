@@ -4,8 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 // Seuraavaksi:
-// 1. Muokkaa käyttäjä järkeväksi
-// 2. Lähde miettimään addDailya achievedin pohjalta, defaultiksi varmaan 0
+// 1.Kato onko getLatestGoal oikein, kutsu sitä ja käytä toiseen queryyn
 @SpringBootApplication
 public class MainApplication {
 

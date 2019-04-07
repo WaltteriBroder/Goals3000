@@ -1,6 +1,7 @@
 package fi.goals.model;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class SingleGoal {
@@ -11,14 +12,16 @@ public class SingleGoal {
     private Integer quantity;
     private String goalName;
     private Integer achieved;
+    private LocalDateTime added;
 
     @Column(name = "user_id")
     private Integer userId;
 
-    public SingleGoal(Integer quantity, String goalName, Integer achieved, Integer userId) {
+    public SingleGoal(Integer quantity, String goalName, Integer achieved, LocalDateTime added, Integer userId) {
         this.quantity = quantity;
         this.goalName = goalName;
         this.achieved = achieved;
+        this.added = added;
         this.userId = userId;
     }
 
@@ -57,6 +60,14 @@ public class SingleGoal {
         this.achieved = achieved;
     }
 
+    public LocalDateTime getAdded() {
+        return added;
+    }
+
+    public void setAdded(LocalDateTime added) {
+        this.added = added;
+    }
+
     public Integer getUserId() {
         return userId;
     }
@@ -65,6 +76,7 @@ public class SingleGoal {
         this.userId = userId;
     }
 
+
     @Override
     public String toString() {
         return "SingleGoal{" +
@@ -72,6 +84,7 @@ public class SingleGoal {
                 ", quantity=" + quantity +
                 ", goalName='" + goalName + '\'' +
                 ", achieved=" + achieved +
+                ", added=" + added +
                 ", userId=" + userId +
                 '}';
     }
