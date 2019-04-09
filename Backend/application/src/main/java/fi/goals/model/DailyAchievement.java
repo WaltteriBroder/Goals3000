@@ -9,6 +9,11 @@ public class DailyAchievement {
     private Integer quantity;
     private LocalDateTime added;
 
+    public DailyAchievement(Integer id, Integer quantity) {
+        this.id = id;
+        this.quantity = quantity;
+    }
+
     public DailyAchievement(Integer quantity, LocalDateTime added) {
         this.quantity = quantity;
         this.added = added;

@@ -1,0 +1,25 @@
+// ADD SINGLE GOAL//
+POST http://localhost:8080/goals/add
+
+{
+  "quantity": 99999,
+  "goalName": "Viinaa",
+  "achieved": 0,
+  "userId": 2
+}
+
+// GET CURRENT SITUATION FOR USER //
+GET http://localhost:8080/goals/list/{usedId}
+
+
+// ADD SINGLE GOAL//
+POST http://localhost:8080/goals/add
+
+{
+   "id": 8,                         // id of singlegoal
+  "quantity": 100
+}
+
+
+
+
