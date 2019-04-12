@@ -34,8 +34,4 @@ export const body = css.global`
     text-transform: none;
     cursor: pointer;
   }
-
-  .footer {
-    background: #fff;
-  }
 `;

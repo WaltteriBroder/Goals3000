@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
+import useGlobalHook from '../store';
 import fetch from 'isomorphic-unfetch';
-import { apiRootUrl } from '../utils';
+import { apiRootUrl } from '../utils/apiRoute';
 import { body } from '../styles/global';
 import { goalList } from '../styles/goals';
 
@@ -22,13 +22,15 @@ const renderGoals = goals => {
 }
 
 const Index = () => {
+  const [globalState, globalActions] = useGlobalHook();
   const [goals, setGoals] = useState([]);
 
   console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
   console.log('root url => ', apiRootUrl);
+  console.log('globalState: ', globalState);
 
   const fetchGoals = async () => {
-    const res = await fetch(`${apiRootUrl}/goals/list/1`); // kovakoodattu user 1
+    const res = await fetch(`${apiRootUrl}/goals/list/${globalState.user}`);
     const data = await res.json();
     console.log('fetchGoals: ', data);
     setGoals(data);
@@ -48,9 +50,6 @@ const Index = () => {
           {renderGoals(goals)}
         </div>
       </div>
-      <footer className="footer">
-
-      </footer>
   
       <style jsx global>{body}</style>
     </div>

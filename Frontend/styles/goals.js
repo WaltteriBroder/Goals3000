@@ -8,7 +8,7 @@ export const goalList = css`
     padding: 1em;
     margin-bottom: 1em;
     font-weight: bold;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
   }
 `;
 
