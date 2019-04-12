@@ -4,6 +4,7 @@ import fetch from 'isomorphic-unfetch';
 import { apiRootUrl } from '../utils/apiRoute';
 import { body } from '../styles/global';
 import { goalList } from '../styles/goals';
+import PageHead from '../utils/pageHead';
 
 const renderGoals = goals => {
   if (goals.length === 0) return;
@@ -44,8 +45,11 @@ const Index = () => {
 
   return (
     <div>
+      <PageHead />
       <div className="header">
-        <h1>Terve tähän tulee joku dashboard</h1>
+        <h1>
+          Terve tähän tulee joku dashboard
+        </h1>
       </div>
       <div>
         <div>

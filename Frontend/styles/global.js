@@ -2,8 +2,6 @@ import css from 'styled-jsx/css';
 
 // global styles
 export const body = css.global`
-  @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
   body {
     margin: 0;
     padding: 10px;
@@ -33,5 +31,9 @@ export const body = css.global`
     font-family: inherit;
     text-transform: none;
     cursor: pointer;
+  }
+
+  .header {
+    margin-bottom: 3em;
   }
 `;
