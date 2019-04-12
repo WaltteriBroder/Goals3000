@@ -14,7 +14,10 @@ const renderGoals = goals => {
         <div className="goal-title">
           {goal.goalName}
         </div>
-        
+        <div className="goal-progress">
+          {`${goal.achieved} / ${goal.quantity}`}
+        </div>
+
         <style jsx>{goalList}</style>
       </div>
     );
@@ -27,7 +30,6 @@ const Index = () => {
 
   console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
   console.log('root url => ', apiRootUrl);
-  console.log('globalState: ', globalState);
 
   const fetchGoals = async () => {
     const res = await fetch(`${apiRootUrl}/goals/list/${globalState.user}`);
@@ -43,7 +45,7 @@ const Index = () => {
   return (
     <div>
       <div className="header">
-        <h2>Terve tää on joku dashboard</h2>
+        <h1>Terve tähän tulee joku dashboard</h1>
       </div>
       <div>
         <div>

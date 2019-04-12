@@ -9,7 +9,7 @@ export const body = css.global`
     padding: 10px;
     color: #333333;
     //background-color: #f9f9f9;
-    font-family: 'Open Sans',
+    font-family: //'Open Sans',
                  -apple-system,
                  BlinkMacSystemFont,
                  "Segoe UI",
