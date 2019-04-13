@@ -1,9 +1,9 @@
-import { body } from '../styles/styles';
+import { body } from '../styles/global';
 import Link from 'next/link';
 
 export default () => (
   <div>
-    <h1>About!</h1>
+    <h1>This is some other page</h1>
     <Link href="/">
       <button>Home</button>
     </Link>

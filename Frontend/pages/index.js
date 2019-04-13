@@ -1,51 +1,65 @@
-import { useState } from 'react';
-import { body } from '../styles/styles';
-import { apiRootUrl } from '../utils';
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
+import useGlobalHook from '../store';
 import fetch from 'isomorphic-unfetch';
+import { apiRootUrl } from '../utils/apiRoute';
+import { body } from '../styles/global';
+import { goalList } from '../styles/goals';
+import PageHead from '../utils/pageHead';
 
-const renderUsers = users => {
-  if (!users) return null;
+const renderGoals = goals => {
+  if (goals.length === 0) return;
 
-  return users.map(user => {
-    return <div key={user.id} style={{margin: '1em 0'}}>
-      <div>name: {user.name}</div>
-      <div>team_name: {user.teamName}</div>
-      <div>salary: {user.salary}</div>
-    </div>
+  return goals.map(goal => {
+    return (
+      <div key={goal.id} className="goal-card">
+        <div className="goal-title">
+          {goal.goalName}
+        </div>
+        <div className="goal-progress">
+          {`${goal.achieved} / ${goal.quantity}`}
+        </div>
+
+        <style jsx>{goalList}</style>
+      </div>
+    );
   });
 }
 
 const Index = () => {
-  const [users, setUsers] = useState([]);
+  const [globalState, globalActions] = useGlobalHook();
+  const [goals, setGoals] = useState([]);
 
   console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
   console.log('root url => ', apiRootUrl);
-  
-  const getUsers = async () => {
-    const res = await fetch(`${apiRootUrl}/users/all`);
+
+  const fetchGoals = async () => {
+    const res = await fetch(`${apiRootUrl}/goals/list/${globalState.user}`);
     const data = await res.json();
-    console.log(data);
-    setUsers(data);
+    console.log('fetchGoals: ', data);
+    setGoals(data);
   }
 
-  return <div>
-    <h2>Welcome to a next.js docker boilerplate!</h2>
-    <Link prefetch href="/about">
-      <button>About</button>
-    </Link>
+  useEffect(() => {
+    fetchGoals();
+  }, []);
 
+  return (
     <div>
-      <button className="nappula" onClick={() => getUsers()}>
-        Kolkuttele!
-      </button>
-      <div>
-        {renderUsers(users)}
+      <PageHead />
+      <div className="header">
+        <h1>
+          Terve tähän tulee joku dashboard
+        </h1>
       </div>
+      <div>
+        <div>
+          {renderGoals(goals)}
+        </div>
+      </div>
+  
+      <style jsx global>{body}</style>
     </div>
-
-    <style jsx global>{body}</style>
-  </div>
+  )
 };
 
 export default Index;
