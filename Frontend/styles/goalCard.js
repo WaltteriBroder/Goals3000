@@ -70,7 +70,7 @@ export const goalCard = css`
 
   .add-progress .form-container form input {
     font-size: 1.1em;
-    width: 85px;
+    width: 60px;
     margin-right: .4em;
   }
   

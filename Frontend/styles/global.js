@@ -39,7 +39,6 @@ export const body = css.global`
 
   .container {
     min-height: 100vh;
-    border: 2px solid goldenrod;
   }
   
   .container[blur="true"] {
