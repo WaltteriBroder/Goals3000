@@ -33,6 +33,16 @@ export const body = css.global`
     cursor: pointer;
   }
 
+  label {
+    display: block;
+  }
+
+  //vitun chrome
+  button,
+  input {
+    border: thin solid #000;
+  }
+
   .header {
     margin-bottom: 3em;
   }
