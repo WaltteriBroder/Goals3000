@@ -6,8 +6,7 @@ import GoalCard from './goalCard';
 
 
 const renderGoals = goals => {
-  if (!goals) return;
-  if (goals.length === 0) return;
+  if (!goals || goals.length === 0) return;
 
   return goals.map(goal => {
     return (
@@ -34,9 +33,7 @@ const GoalList = () => {
         </h1>
       </div>
       <div>
-        <div>
-          {renderGoals(globalState.goals)}
-        </div>
+        {renderGoals(globalState.goals)}
       </div>
   
       <style jsx global>{body}</style>
