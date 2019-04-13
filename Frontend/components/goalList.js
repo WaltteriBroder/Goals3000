@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import useGlobalHook from '../store';
 import apiRootUrl from '../utils/apiRoute';
-import { body } from '../styles/global';
 import GoalCard from './goalCard';
-
+import { goalList } from '../styles/goalList';
 
 const renderGoals = goals => {
   if (!goals || goals.length === 0) return;
@@ -26,17 +25,17 @@ const GoalList = () => {
   }, []);
 
   return (
-    <div>
-      <div className="header">
-        <h1>
-          This is some dashboard
-        </h1>
+    <div className="goal-list">
+      <div className="goal-list-top">
+        <button className="add-goal-btn" onClick={() => globalActions.toggleNewGoalModal()}>
+          add new goal
+        </button>
       </div>
       <div>
         {renderGoals(globalState.goals)}
       </div>
   
-      <style jsx global>{body}</style>
+      <style jsx>{goalList}</style>
     </div>
   )
 };

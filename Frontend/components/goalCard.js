@@ -2,7 +2,7 @@ import { useState } from 'react';
 import useGlobalHook from '../store';
 import fetch from 'isomorphic-unfetch';
 import apiRootUrl from '../utils/apiRoute';
-import { goalList } from '../styles/goals';
+import { goalCard } from '../styles/goalCard';
 
 const GoalCard = ({ goal }) => {
   const [globalState, globalActions] = useGlobalHook();
@@ -75,7 +75,7 @@ const GoalCard = ({ goal }) => {
         </div>
       </div>
 
-      <style jsx>{goalList}</style>
+      <style jsx>{goalCard}</style>
     </div>
   );
 }

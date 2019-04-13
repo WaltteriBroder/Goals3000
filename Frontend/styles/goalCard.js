@@ -1,6 +1,6 @@
 import css from 'styled-jsx/css';
 
-export const goalList = css`
+export const goalCard = css`
   @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
 
   .goal-card {
@@ -9,7 +9,8 @@ export const goalList = css`
     border-radius: 1px;
     border: 1px solid #eaeaea;
     padding: 1em;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    padding-right: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
   
   .goal-card:nth-last-child(n + 2) {
