@@ -59,7 +59,7 @@ const GoalCard = ({ goal }) => {
           <div className="form-container">
             <form onSubmit={handleSubmit} visible={`${modalVisible}`}>
               <label className="quantity-label">
-                quantity
+                your progress
               </label>
               <div className="input-row">
                 <input type="number" onChange={handleQuantityChange} />

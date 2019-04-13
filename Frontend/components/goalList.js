@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import useGlobalHook from '../store';
 import apiRootUrl from '../utils/apiRoute';
 import { body } from '../styles/global';

@@ -5,8 +5,8 @@ export const body = css.global`
   body {
     margin: 0;
     padding: 10px;
-    color: #333333;
-    //background-color: #f9f9f9;
+    color: #292f33;
+    background-color: #fff;
     font-family: //'Open Sans',
                  -apple-system,
                  BlinkMacSystemFont,
@@ -37,13 +37,12 @@ export const body = css.global`
     display: block;
   }
 
-  //vitun chrome
-  button,
-  input {
-    border: thin solid #000;
-  }
-
   .header {
     margin-bottom: 3em;
+  }
+
+  .header h1 {
+    font-size: 3em;
+    //font-weight: lighter;
   }
 `;

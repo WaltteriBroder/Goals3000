@@ -1,6 +1,8 @@
 import css from 'styled-jsx/css';
 
 export const goalList = css`
+  @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
   .goal-card {
     max-width: 700px;
     background-color: #ffffff;
@@ -15,8 +17,10 @@ export const goalList = css`
   }
 
   .goal-card .goal-title {
-    font-size: 2em;
+    font-family: 'Lato';
+    font-size: 2.2em;
     padding-bottom: 20px;
+    font-weight: lighter;
   }
 
   .goal-card .goal-added {
@@ -65,7 +69,8 @@ export const goalList = css`
 
   .add-progress .form-container form input {
     font-size: 1.1em;
-    width: 65px;
+    width: 85px;
+    margin-right: .4em;
   }
   
   .add-progress .form-container form button {
