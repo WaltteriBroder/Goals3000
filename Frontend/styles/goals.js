@@ -16,7 +16,18 @@ export const goalList = css`
 
   .goal-card .goal-title {
     font-size: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 20px;
+  }
+
+  .goal-card .goal-added {
+    padding-bottom: 20px;
+  }
+
+  .goal-card .progress-title {
+    padding-bottom: 3px;
+    text-transform: uppercase;
+    font-size: .8em;
+    font-weight: bold;
   }
 
   .goal-card .goal-progress {

@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import useGlobalHook from '../store';
-import fetch from 'isomorphic-unfetch';
 import apiRootUrl from '../utils/apiRoute';
 import { body } from '../styles/global';
 import GoalCard from './goalCard';
@@ -19,11 +18,9 @@ const renderGoals = goals => {
 
 const GoalList = () => {
   const [globalState, globalActions] = useGlobalHook();
-  const [goals, setGoals] = useState([]);
 
   console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
   console.log('root url => ', apiRootUrl);
-  console.log('globalState.testi => ', globalState.test);
 
   useEffect(() => {
     globalActions.fetchGoals();
@@ -33,7 +30,7 @@ const GoalList = () => {
     <div>
       <div className="header">
         <h1>
-          Terve tähän tulee joku dashboard
+          This is some dashboard
         </h1>
       </div>
       <div>
@@ -41,7 +38,6 @@ const GoalList = () => {
           {renderGoals(globalState.goals)}
         </div>
       </div>
-      {globalState.test}
   
       <style jsx global>{body}</style>
     </div>

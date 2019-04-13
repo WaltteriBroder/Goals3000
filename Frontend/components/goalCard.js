@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import useGlobalHook from '../store';
 import fetch from 'isomorphic-unfetch';
 import apiRootUrl from '../utils/apiRoute';
@@ -37,12 +37,16 @@ const GoalCard = ({ goal }) => {
     toggleModal();
   }
 
-  console.log(quantity);
-
   return (
     <div className="goal-card">
       <div className="goal-title">
         {goal.goalName}
+      </div>
+      <div className="goal-added">
+        Goal added: <b>{new Date(goal.added).toLocaleDateString()}</b>
+      </div>
+      <div className="progress-title">
+        progress
       </div>
       <div className="goal-progress">
         <div>
