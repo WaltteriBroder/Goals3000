@@ -2,7 +2,7 @@ import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import useGlobalHook from '../store';
 import apiRootUrl from '../utils/apiRoute';
-import { newGoalModal } from '../styles/newGoalModal';
+import { newGoalModal } from '../styles/styles-newGoalModal';
 
 const NewGoalModal = ({ visible }) => {
   if (!visible) return null;
@@ -50,7 +50,7 @@ const NewGoalModal = ({ visible }) => {
         </button>
         <form onSubmit={handleSubmit}>
           <div className="add-goal-title">
-            add new goal
+            {'add new goal, ei jaksa css :('}
           </div>
           <label>Goal name</label>
           <input type="text" name="goalName" onChange={handleNameChange} />

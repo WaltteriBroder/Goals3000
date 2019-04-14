@@ -2,12 +2,10 @@ import useGlobalHook from '../store';
 import PageHead from '../utils/pageHead';
 import GoalList from '../components/goalList';
 import NewGoalModal from '../components/newGoalModal';
-import { body } from '../styles/global';
+import { body } from '../styles/styles-global';
 
 const Index = () => {
   const [globalState, globalActions] = useGlobalHook();
-
-  console.log(globalState.newGoalModalOpen);
 
   return (
     <div>

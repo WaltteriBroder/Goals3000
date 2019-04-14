@@ -5,7 +5,6 @@ export const testiAction = (store, message) => {
 }
 
 export const fetchGoals = async store => {
-  console.log('store => ', store);
   const res = await fetch(`${apiRootUrl}/goals/list/${store.state.user}`);
   const goals = await res.json();
   console.log('fetchGoals: ', goals);
