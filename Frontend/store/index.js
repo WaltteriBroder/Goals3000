@@ -3,8 +3,10 @@ import useGlobalHook from "../utils/useGlobalHook";
 import * as actions from "../actions";
 
 const initialState = {
-  test: "",
-  user: 1 // kovakoodataan useriksi id ykkönen
+  test: "juukeli",
+  user: 1, // kovakoodataan useriksi id ykkönen
+  goals: [],
+  newGoalModalOpen: false
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);
