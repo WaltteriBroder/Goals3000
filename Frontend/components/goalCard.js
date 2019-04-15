@@ -2,12 +2,20 @@ import { useState } from 'react';
 import useGlobalHook from '../store';
 import fetch from 'isomorphic-unfetch';
 import apiRootUrl from '../utils/apiRoute';
-import { goalCard } from '../styles/goalCard';
+import { goalCard } from '../styles/styles-goalCard';
+import differenceInDays from 'date-fns/difference_in_days';
 
 const GoalCard = ({ goal }) => {
   const [globalState, globalActions] = useGlobalHook();
   const [modalVisible, setModalVisible] = useState(false);
   const [quantity, setQuantity] = useState('');
+
+  const getRemainingDays = () => {
+    const startDate = new Date(goal.added);
+    const endDate = new Date('2019/12/31');
+    const result = differenceInDays(endDate, startDate);
+    return result;
+  }
 
   const toggleModal = () => {
     setModalVisible(!modalVisible);
@@ -42,9 +50,6 @@ const GoalCard = ({ goal }) => {
       <div className="goal-title">
         {goal.goalName}
       </div>
-      <div className="goal-added">
-        Goal added: <b>{new Date(goal.added).toLocaleDateString()}</b>
-      </div>
       <div className="progress-title">
         progress
       </div>
@@ -67,12 +72,26 @@ const GoalCard = ({ goal }) => {
                   add
                 </button>
                 <button type="button" onClick={() => toggleModal()}>
-                  close
+                  cancel
                 </button>
               </div>
             </form>
           </div>
         </div>
+      </div>
+      <div className="goal-dates">
+        <div className="goal-added">
+          Goal started: <b>{new Date(goal.added).toLocaleDateString()}</b>
+        </div>
+        <div className="goal-duration">
+          Duration: <b>365 days</b>
+        </div>
+        <div className="goal-left">
+          Left: <b>{getRemainingDays()} days</b>
+        </div>
+      </div>
+      <div className="goal-chart-container">
+        <div className="goal-chart"></div>
       </div>
 
       <style jsx>{goalCard}</style>

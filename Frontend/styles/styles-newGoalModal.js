@@ -16,6 +16,12 @@ export const newGoalModal = css`
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     opacity: 1;
     transition: all ease-in-out 90ms;
+
+    -webkit-filter: blur(0);
+    -moz-filter: blur(0);
+    -o-filter: blur(0);
+    -ms-filter: blur(0);
+    filter: blur(0);
   }
 
   .new-goal-modal .close-btn {

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import fetch from 'isomorphic-unfetch';
 import useGlobalHook from '../store';
 import apiRootUrl from '../utils/apiRoute';
-import { newGoalModal } from '../styles/newGoalModal';
+import { newGoalModal } from '../styles/styles-newGoalModal';
 
 const NewGoalModal = ({ visible }) => {
   if (!visible) return null;
@@ -60,6 +60,9 @@ const NewGoalModal = ({ visible }) => {
             ADD
           </button>
         </form>
+      </div>
+      <div>
+        {`ei jaksa css :(`}
       </div>
 
       <style jsx>{newGoalModal}</style>
