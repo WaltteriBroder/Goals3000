@@ -4,7 +4,7 @@ import css from 'styled-jsx/css';
 export const body = css.global`
   body {
     margin: 0;
-    padding: 10px;
+    padding: 0;
     color: #292f33;
     background-color: #fff;
     font-family: //'Open Sans',
@@ -21,6 +21,8 @@ export const body = css.global`
                  sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    border: 1px solid red;
   }
   
   button,
