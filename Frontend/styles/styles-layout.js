@@ -1,0 +1,30 @@
+import css from 'styled-jsx/css';
+
+export const layout = css`
+  .container {
+    min-height: 100vh;
+  }
+  
+  .container[blur="true"] {
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
+  }
+
+  .header {
+    margin-bottom: 3em;
+  }
+
+  .header h1 {
+    font-size: 1.8em;
+    //font-weight: lighter;
+  }
+
+  @media only screen and (min-width: 565px) {
+    .header h1 {
+      font-size: 3em;
+    }
+  }
+`;
