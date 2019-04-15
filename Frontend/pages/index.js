@@ -9,19 +9,26 @@ const Index = () => {
   const [globalState, globalActions] = useGlobalHook();
 
   return (
-    <div className="app" blur={`${globalState.newGoalModalOpen}`}>
+    <div>
       <PageHead />
       <NewGoalModal visible={globalState.newGoalModalOpen} />
-      <div className="header">
-        <h1> This is some dashboard </h1>
-      </div>
       
-      <div className="flex-container">
-        <div className="container">
-          <GoalList />
+      <div className="app" blur={`${globalState.newGoalModalOpen}`}>
+        <div className="header">
+          <h1> goals_3000 ;-D </h1>
         </div>
+        
+        <div className="flex-wrapper">
+          <div className="container">
+            <GoalList />
+          </div>
+        </div>
+    
+        <footer className="footer">
+          {'footer ;)'}
+        </footer>
       </div>
-  
+
       <style jsx>{layout}</style>
       <style jsx global>{body}</style>
     </div>

@@ -50,7 +50,7 @@ const NewGoalModal = ({ visible }) => {
         </button>
         <form onSubmit={handleSubmit}>
           <div className="add-goal-title">
-            {'add new goal, ei jaksa css :('}
+            add new goal
           </div>
           <label>Goal name</label>
           <input type="text" name="goalName" onChange={handleNameChange} />
@@ -60,6 +60,9 @@ const NewGoalModal = ({ visible }) => {
             ADD
           </button>
         </form>
+      </div>
+      <div>
+        {`ei jaksa css :(`}
       </div>
 
       <style jsx>{newGoalModal}</style>

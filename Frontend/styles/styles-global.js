@@ -21,8 +21,6 @@ export const body = css.global`
                  sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-
-    border: 1px solid red;
   }
   
   button,

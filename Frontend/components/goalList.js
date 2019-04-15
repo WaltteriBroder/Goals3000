@@ -25,13 +25,13 @@ const GoalList = () => {
   }, []);
 
   return (
-    <div className="goal-list">
+    <div>
       <div className="goal-list-top">
         <button className="add-goal-btn" onClick={() => globalActions.toggleNewGoalModal()}>
           add new goal
         </button>
       </div>
-      <div>
+      <div className="goal-list">
         {renderGoals(globalState.goals)}
       </div>
   
