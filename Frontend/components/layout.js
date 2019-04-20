@@ -9,9 +9,6 @@ const Layout = props => {
       <Head />
       <header className="app-header">
         <h1>we are very goal-oriented people ;-D</h1>
-        {/* <button className="btn-primary add-goal-btn">
-          add new goal +
-        </button> */}
       </header>
       <div className="app-content">
         {props.children}
