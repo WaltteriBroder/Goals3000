@@ -25,16 +25,18 @@ const GoalList = () => {
   }, []);
 
   return (
-    <div>
-      <div className="goal-list-top">
-        <button className="add-goal-btn" onClick={() => globalActions.toggleNewGoalModal()}>
-          add new goal
-        </button>
-      </div>
+    <div className="goal-list-container">
       <div className="goal-list">
-        {renderGoals(globalState.goals)}
+        <div className="goal-list-top">
+          <button className="add-goal-btn" onClick={globalActions.toggleNewGoalModal}>
+            add new goal +
+          </button>
+        </div>
+        <div className="goals">
+          {renderGoals(globalState.goals)}
+        </div>
       </div>
-  
+
       <style jsx>{goalList}</style>
     </div>
   )
