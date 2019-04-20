@@ -47,21 +47,21 @@ const GoalCard = ({ goal }) => {
 
   return (
     <div className="goal-card">
-      <div className="goal-title">
-        {goal.goalName}
-      </div>
-      <div className="progress-title">
-        progress
-      </div>
-      <div className="goal-progress">
-        <div>
-          {`${goal.achieved} / ${goal.quantity}`}
+      <div className="goal-card-left">
+        <div className="goal-title">
+          {goal.goalName}
         </div>
-        <div className="add-progress">
-          <button className="add-progress-toggle" onClick={() => toggleModal()}>
-            add progress
-          </button>
-          <div className="form-container">
+        <div className="progress-title">
+          progress
+        </div>
+        <div className="goal-progress">
+          <div>
+            {`${goal.achieved} / ${goal.quantity}`}
+          </div>
+          <div className="add-progress">
+            <button className="add-progress-toggle" onClick={() => toggleModal()}>
+              add progress
+            </button>
             <form onSubmit={handleSubmit} visible={`${modalVisible}`}>
               <label className="quantity-label">
                 add
@@ -78,20 +78,22 @@ const GoalCard = ({ goal }) => {
             </form>
           </div>
         </div>
+        <div className="goal-dates">
+          <div className="goal-added">
+            Goal started: <b>{new Date(goal.added).toLocaleDateString()}</b>
+          </div>
+          <div className="goal-duration">
+            Duration: <b>365 days</b>
+          </div>
+          <div className="goal-left">
+            Left: <b>{getRemainingDays()} days</b>
+          </div>
+        </div>
       </div>
-      <div className="goal-dates">
-        <div className="goal-added">
-          Goal started: <b>{new Date(goal.added).toLocaleDateString()}</b>
+      <div className="goal-card-right">
+        <div className="goal-chart">
+          chart.js goes here
         </div>
-        <div className="goal-duration">
-          Duration: <b>365 days</b>
-        </div>
-        <div className="goal-left">
-          Left: <b>{getRemainingDays()} days</b>
-        </div>
-      </div>
-      <div className="goal-chart-container">
-        <div className="goal-chart"></div>
       </div>
 
       <style jsx>{goalCard}</style>
