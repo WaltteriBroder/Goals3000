@@ -19,11 +19,14 @@ export const goalCard = css`
 
   .goal-card-right {
     flex-grow: 1;
+    min-width: 50%;
+    max-width: 60%;
+    //max-width: 60%;
   }
 
   .goal-title {
     color: #0366d6;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bolder;
     padding-bottom: 2rem;
   }
@@ -90,18 +93,22 @@ export const goalCard = css`
     padding-bottom: .5em;
   }
 
-  .goal-chart {
-    height: 100%;
-    position: relative;
-    background-color: #efefef;
-    opacity: .9;
-  }
-
   @media only screen and (min-width: 565px) {
     .goal-card {
       //width: 400px;
       //max-width: 500px;
       //min-width: 400px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .goal-card {
+      flex-flow: column nowrap;
+    }
+
+    .goal-card-right {
+      padding-top: 2rem;
+      max-width: 98%;
     }
   }
 `;
