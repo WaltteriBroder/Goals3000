@@ -1,14 +1,14 @@
 import css from 'styled-jsx/css';
 
 export const goalCard = css`
-  @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
-
   .goal-card {
     display: flex;
     flex-flow: row wrap;
     background-color: #fff;
     border-radius: 1px;
-    border: 1px solid rgb(234, 234, 234);
+    //border: 1px solid rgb(234, 234, 234);
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
     padding: 1rem;
     margin-bottom: 1.5rem;
   }
@@ -22,8 +22,9 @@ export const goalCard = css`
   }
 
   .goal-title {
-    font-family: 'Lato';
-    font-size: 1.6rem;
+    color: #0366d6;
+    font-size: 1.3rem;
+    font-weight: bolder;
     padding-bottom: 2rem;
   }
 
