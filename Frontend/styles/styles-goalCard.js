@@ -1,14 +1,14 @@
 import css from 'styled-jsx/css';
 
 export const goalCard = css`
-  @import url('https://fonts.googleapis.com/css?family=Lato:300,400');
-
   .goal-card {
     display: flex;
     flex-flow: row wrap;
     background-color: #fff;
     border-radius: 1px;
-    border: 1px solid rgb(234, 234, 234);
+    //border: 1px solid rgb(234, 234, 234);
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
     padding: 1rem;
     margin-bottom: 1.5rem;
   }
@@ -19,11 +19,15 @@ export const goalCard = css`
 
   .goal-card-right {
     flex-grow: 1;
+    min-width: 50%;
+    max-width: 60%;
+    //max-width: 60%;
   }
 
   .goal-title {
-    font-family: 'Lato';
-    font-size: 1.6rem;
+    color: #0366d6;
+    font-size: 1.4rem;
+    font-weight: bolder;
     padding-bottom: 2rem;
   }
 
@@ -89,18 +93,22 @@ export const goalCard = css`
     padding-bottom: .5em;
   }
 
-  .goal-chart {
-    height: 100%;
-    position: relative;
-    background-color: #efefef;
-    opacity: .9;
-  }
-
   @media only screen and (min-width: 565px) {
     .goal-card {
       //width: 400px;
       //max-width: 500px;
       //min-width: 400px;
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    .goal-card {
+      flex-flow: column nowrap;
+    }
+
+    .goal-card-right {
+      padding-top: 2rem;
+      max-width: 98%;
     }
   }
 `;

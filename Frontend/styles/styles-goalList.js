@@ -9,17 +9,13 @@ export const goalList = css`
 
   .goal-list {
     flex-grow: 1;
-    max-width: 1000px;
+    max-width: 1100px;
+    padding: 0 .5rem;
   }
 
   .goal-list-top {
     padding-bottom: 1.5rem;
   }
-
-  .goals {
-    
-  }
-
 
   .add-goal-btn {
     color: #fff;

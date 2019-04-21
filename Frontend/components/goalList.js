@@ -17,8 +17,8 @@ const renderGoals = goals => {
 const GoalList = () => {
   const [globalState, globalActions] = useGlobalHook();
 
-  console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
-  console.log('root url => ', apiRootUrl);
+  //console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
+  //console.log('root url => ', apiRootUrl);
 
   useEffect(() => {
     globalActions.fetchGoals();

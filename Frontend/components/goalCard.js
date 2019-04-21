@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import useGlobalHook from '../store';
 import fetch from 'isomorphic-unfetch';
+import GoalChart from './goalChart';
 import apiRootUrl from '../utils/apiRoute';
 import { goalCard } from '../styles/styles-goalCard';
 import differenceInDays from 'date-fns/difference_in_days';
 
 const GoalCard = ({ goal }) => {
   const [globalState, globalActions] = useGlobalHook();
-  const [modalVisible, setModalVisible] = useState(false);
+  const [formVisible, setFormVisible] = useState(false);
   const [quantity, setQuantity] = useState('');
 
   const getRemainingDays = () => {
@@ -17,8 +18,8 @@ const GoalCard = ({ goal }) => {
     return result;
   }
 
-  const toggleModal = () => {
-    setModalVisible(!modalVisible);
+  const toggleForm = () => {
+    setFormVisible(!formVisible);
   }
 
   const handleQuantityChange = ({ target }) => {
@@ -42,7 +43,7 @@ const GoalCard = ({ goal }) => {
     e.preventDefault();
     postProgress();
     setQuantity('');
-    toggleModal();
+    toggleForm();
   }
 
   return (
@@ -59,10 +60,10 @@ const GoalCard = ({ goal }) => {
             {`${goal.achieved} / ${goal.quantity}`}
           </div>
           <div className="add-progress">
-            <button className="add-progress-toggle" onClick={() => toggleModal()}>
+            <button className="add-progress-toggle" onClick={() => toggleForm()}>
               add progress
             </button>
-            <form onSubmit={handleSubmit} visible={`${modalVisible}`}>
+            <form onSubmit={handleSubmit} visible={`${formVisible}`}>
               <label className="quantity-label">
                 add
               </label>
@@ -71,7 +72,7 @@ const GoalCard = ({ goal }) => {
                 <button type="submit" className="add-progress-btn">
                   add
                 </button>
-                <button type="button" onClick={() => toggleModal()}>
+                <button type="button" onClick={() => toggleForm()}>
                   cancel
                 </button>
               </div>
@@ -85,15 +86,13 @@ const GoalCard = ({ goal }) => {
           <div className="goal-duration">
             Duration: <b>365 days</b>
           </div>
-          <div className="goal-left">
+          <div className="goal-remaining">
             Left: <b>{getRemainingDays()} days</b>
           </div>
         </div>
       </div>
       <div className="goal-card-right">
-        <div className="goal-chart">
-          chart.js goes here
-        </div>
+        <GoalChart goal={goal} />
       </div>
 
       <style jsx>{goalCard}</style>
