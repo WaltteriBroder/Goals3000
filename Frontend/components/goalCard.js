@@ -5,6 +5,7 @@ import GoalChart from './goalChart';
 import apiRootUrl from '../utils/apiRoute';
 import { goalCard } from '../styles/styles-goalCard';
 import differenceInDays from 'date-fns/difference_in_days';
+import addYears from 'date-fns/add_years';
 
 const GoalCard = ({ goal }) => {
   const [globalState, globalActions] = useGlobalHook();
@@ -13,8 +14,8 @@ const GoalCard = ({ goal }) => {
 
   const getRemainingDays = () => {
     const startDate = new Date(goal.added);
-    const endDate = new Date('2019/12/31');
-    const result = differenceInDays(endDate, startDate);
+    const endDate = addYears(startDate, 1) - 1;
+    const result = differenceInDays(endDate, new Date());
     return result;
   }
 
