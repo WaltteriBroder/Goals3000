@@ -10,7 +10,7 @@ export const goalCard = css`
     border: 1px solid #d1d5da;
     border-radius: 3px;
     padding: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .goal-card-left {
