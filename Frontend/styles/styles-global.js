@@ -33,6 +33,14 @@ export const body = css.global`
     cursor: pointer;
   }
 
+  label {
+    display: block;
+  }
+
+  .relative-container {
+    position: relative;
+  }
+
   .btn-reset {
     background: none;
     color: inherit;
@@ -44,11 +52,22 @@ export const body = css.global`
     outline: inherit;
   }
 
-  label {
-    display: block;
+  .btn-primary {
+
   }
 
-  .relative-container {
-    position: relative;
+  .btn-primary {
+    color: #fff;
+    background-color: #099cec;
+    border: 1px solid #099cec;
+    border-radius: 5px;
+    outline: none;
+    transition: background-color .1s cubic-bezier(.25,.8,.25,1),
+                border-color .2s cubic-bezier(.25,.8,.25,1);
+  }
+
+  .btn-primary:active {
+    background-color: #0880C2;
+    border: 1px solid #0880C2;
   }
 `;

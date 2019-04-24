@@ -17,24 +17,26 @@ const renderGoals = goals => {
 const GoalList = () => {
   const [globalState, globalActions] = useGlobalHook();
 
-  console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
-  console.log('root url => ', apiRootUrl);
+  //console.log('process.env.NODE_ENV => ', process.env.NODE_ENV);
+  //console.log('root url => ', apiRootUrl);
 
   useEffect(() => {
     globalActions.fetchGoals();
   }, []);
 
   return (
-    <div>
-      <div className="goal-list-top">
-        <button className="add-goal-btn" onClick={() => globalActions.toggleNewGoalModal()}>
-          add new goal
-        </button>
-      </div>
+    <div className="goal-list-container">
       <div className="goal-list">
-        {renderGoals(globalState.goals)}
+        <div className="goal-list-top">
+          <button className="add-goal-btn" onClick={globalActions.toggleNewGoalModal}>
+            add new goal +
+          </button>
+        </div>
+        <div className="goals">
+          {renderGoals(globalState.goals)}
+        </div>
       </div>
-  
+
       <style jsx>{goalList}</style>
     </div>
   )
