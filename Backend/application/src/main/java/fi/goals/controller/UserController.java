@@ -3,7 +3,12 @@ package fi.goals.controller;
 import fi.goals.model.User;
 import fi.goals.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
 
 @org.springframework.web.bind.annotation.RestController
 @CrossOrigin
@@ -27,16 +32,20 @@ public class UserController {
       return userService.findAll();
     }
 
-    @GetMapping("/all/{name}")
-    public Iterable<User> findByName(@PathVariable("name") String name){
-        return userService.findByName(name);
+    @PostMapping("/register")
+    public void registerUser(@Valid @RequestBody User user, BindingResult result){
+
+        if(result.hasErrors()){
+
+            List<ObjectError> allErrors = result.getAllErrors();
+            for(ObjectError error : allErrors){
+                System.out.println(error);
+            }
+
+        } else {
+            userService.registerUser(user);
+        }
+
     }
-
-    @PostMapping("/add")
-    public void addUser(@RequestBody User user){
-        userService.addUser(user);
-    }
-
-
 
 }

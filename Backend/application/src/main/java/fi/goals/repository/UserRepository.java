@@ -1,15 +1,16 @@
 package fi.goals.repository;
 
 import fi.goals.model.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Collection;
 
-public interface UserRepository extends CrudRepository<User, Long> {
+@Repository
+public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query(
-            value = "SELECT * FROM USER u WHERE u.name = ?1",
-            nativeQuery = true)
-    Collection<User> findByName(String name);
+    User findByUsername(String username);
+
 }

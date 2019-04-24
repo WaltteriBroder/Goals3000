@@ -3,6 +3,7 @@ package fi.goals.service;
 import fi.goals.model.User;
 import fi.goals.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -19,11 +20,9 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public Iterable<User> findByName(String name) {
-        return userRepository.findByName(name);
-    }
-
-    public void addUser(User user) {
+    public void registerUser(User user) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
     }
 }
