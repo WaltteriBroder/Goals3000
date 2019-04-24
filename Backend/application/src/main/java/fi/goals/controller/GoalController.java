@@ -27,6 +27,11 @@ public class GoalController {
     }
 
     @GetMapping("/list/{userId}")
+    public Iterable<SingleGoal> getSingleGoalsByUser(@PathVariable("userId") Integer userId){
+        return goalService.getSingleGoalsByUser(userId);
+    }
+
+    @GetMapping("/latest/{userId}")
     public List<SingleGoal> getLatestSingleGoalsByUser(@PathVariable("userId") Integer userId){
         return goalService.getLatestSingleGoalsByUser(userId);
     }

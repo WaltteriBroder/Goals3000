@@ -26,6 +26,10 @@ public class GoalService {
         return singleGoalRepository.findAll();
     }
 
+    public Iterable<SingleGoal> getSingleGoalsByUser(Integer userId) {
+        return singleGoalRepository.getSingleGoalsByUser(userId);
+    }
+
     public List<SingleGoal> getLatestSingleGoalsByUser(Integer userId) {
 
         List<SingleGoal> latestSingleGoalsByUser = new ArrayList<>();
